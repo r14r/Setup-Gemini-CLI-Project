@@ -72,3 +72,97 @@
 2026-05-05 17:41:57.286 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [9ms]
 2026-05-05 17:41:57.290 [info] > git status -z -uall [16ms]
 2026-05-05 17:41:57.693 [info] > git check-ignore -v -z --stdin [10ms]
+2026-05-05 17:42:15.298 [info] [Git][getRemotes] No remotes found in the git config file
+2026-05-05 17:42:15.308 [info] > git config --get commit.template [13ms]
+2026-05-05 17:42:15.313 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [15ms]
+2026-05-05 17:42:15.313 [warning] [Git][getBranch] No such branch: main
+2026-05-05 17:42:15.327 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [9ms]
+2026-05-05 17:42:15.331 [info] > git status -z -uall [16ms]
+2026-05-05 17:42:15.680 [info] > git check-ignore -v -z --stdin [10ms]
+2026-05-05 17:42:15.700 [info] > git ls-files --stage -- Workspace.code-workspace [10ms]
+2026-05-05 17:42:15.702 [info] > git show --textconv HEAD:Workspace.code-workspace [15ms]
+2026-05-05 17:42:15.706 [info] > git show --textconv :Workspace.code-workspace [21ms]
+2026-05-05 17:42:15.707 [info] > git ls-tree -l HEAD -- Workspace.code-workspace [13ms]
+2026-05-05 17:42:15.707 [info] fatal: Not a valid object name HEAD
+2026-05-05 17:42:15.716 [info] > git cat-file -s 0de7eb7e88df9624cb23c2ec603478810dd8cbe4 [14ms]
+2026-05-05 17:42:15.717 [info] > git hash-object -t tree /dev/null [12ms]
+2026-05-05 17:42:15.717 [warning] [GitFileSystemProvider][readFile] File not found - git:/Users/Shared/CLOUD/Programmier-Workshops/Kurse/Gemini/Einsteiger/Setup-Gemini-CLI-Project/Workspace.code-workspace.git?%7B%22path%22%3A%22%2FUsers%2FShared%2FCLOUD%2FProgrammier-Workshops%2FKurse%2FGemini%2FEinsteiger%2FSetup-Gemini-CLI-Project%2FWorkspace.code-workspace%22%2C%22ref%22%3A%22HEAD%22%7D
+2026-05-05 17:42:15.734 [info] > git hash-object -t tree /dev/null [24ms]
+2026-05-05 17:42:15.734 [warning] [GitFileSystemProvider][stat] File not found - git:/Users/Shared/CLOUD/Programmier-Workshops/Kurse/Gemini/Einsteiger/Setup-Gemini-CLI-Project/Workspace.code-workspace.git?%7B%22path%22%3A%22%2FUsers%2FShared%2FCLOUD%2FProgrammier-Workshops%2FKurse%2FGemini%2FEinsteiger%2FSetup-Gemini-CLI-Project%2FWorkspace.code-workspace%22%2C%22ref%22%3A%22HEAD%22%7D
+2026-05-05 17:42:15.970 [info] > git check-ignore -v -z --stdin [10ms]
+2026-05-05 17:42:15.986 [info] > git show --textconv :setup-vscode-keychain.sh [13ms]
+2026-05-05 17:42:15.987 [info] > git show --textconv HEAD:setup-vscode-keychain.sh [11ms]
+2026-05-05 17:42:15.987 [warning] [GitFileSystemProvider][readFile] File not found - git:/Users/Shared/CLOUD/Programmier-Workshops/Kurse/Gemini/Einsteiger/Setup-Gemini-CLI-Project/setup-vscode-keychain.sh.git?%7B%22path%22%3A%22%2FUsers%2FShared%2FCLOUD%2FProgrammier-Workshops%2FKurse%2FGemini%2FEinsteiger%2FSetup-Gemini-CLI-Project%2Fsetup-vscode-keychain.sh%22%2C%22ref%22%3A%22HEAD%22%7D
+2026-05-05 17:42:15.990 [info] > git ls-files --stage -- setup-vscode-keychain.sh [12ms]
+2026-05-05 17:42:15.993 [info] > git ls-tree -l HEAD -- setup-vscode-keychain.sh [11ms]
+2026-05-05 17:42:15.993 [info] fatal: Not a valid object name HEAD
+2026-05-05 17:42:15.993 [warning] [GitFileSystemProvider][stat] File not found - git:/Users/Shared/CLOUD/Programmier-Workshops/Kurse/Gemini/Einsteiger/Setup-Gemini-CLI-Project/setup-vscode-keychain.sh.git?%7B%22path%22%3A%22%2FUsers%2FShared%2FCLOUD%2FProgrammier-Workshops%2FKurse%2FGemini%2FEinsteiger%2FSetup-Gemini-CLI-Project%2Fsetup-vscode-keychain.sh%22%2C%22ref%22%3A%22HEAD%22%7D
+2026-05-05 17:42:16.004 [info] > git cat-file -s 0dd1ed3635f24e0013f643cc00f22780d2033387 [12ms]
+2026-05-05 17:42:17.835 [info] > git log --format=%H%n%aN%n%aE%n%at%n%ct%n%P%n%D%n%B -z --shortstat --diff-merges=first-parent -n50 --skip=0 --topo-order --decorate=full --stdin [16ms]
+2026-05-05 17:42:17.835 [info] fatal: bad revision 'refs/heads/main'
+2026-05-05 17:42:17.835 [error] [GitHistoryProvider][provideHistoryItems] Failed to get history items with options '{"historyItemRefs":["refs/heads/main"],"limit":50,"skip":0}': Failed to execute git {
+  "exitCode": 128,
+  "gitCommand": "log",
+  "stdout": "",
+  "stderr": "fatal: bad revision 'refs/heads/main'\n"
+}
+2026-05-05 17:42:18.435 [info] > git check-ignore -v -z --stdin [7ms]
+2026-05-05 17:42:27.645 [info] [Git][getRemotes] No remotes found in the git config file
+2026-05-05 17:42:27.651 [info] > git config --get commit.template [31ms]
+2026-05-05 17:42:27.655 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [10ms]
+2026-05-05 17:42:27.673 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [11ms]
+2026-05-05 17:42:27.679 [info] > git status -z -uall [20ms]
+2026-05-05 17:42:27.815 [info] > git log --format=%H%n%aN%n%aE%n%at%n%ct%n%P%n%D%n%B -z --shortstat --diff-merges=first-parent -n50 --skip=0 --topo-order --decorate=full --stdin [127ms]
+2026-05-05 17:42:28.320 [info] > git check-ignore -v -z --stdin [11ms]
+2026-05-05 17:42:32.701 [info] [Git][getRemotes] No remotes found in the git config file
+2026-05-05 17:42:32.706 [info] > git config --get commit.template [15ms]
+2026-05-05 17:42:32.708 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [7ms]
+2026-05-05 17:42:32.721 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [9ms]
+2026-05-05 17:42:32.725 [info] > git status -z -uall [15ms]
+2026-05-05 17:42:37.734 [info] [Git][getRemotes] No remotes found in the git config file
+2026-05-05 17:42:37.739 [info] > git config --get commit.template [5ms]
+2026-05-05 17:42:37.740 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [6ms]
+2026-05-05 17:42:37.750 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [7ms]
+2026-05-05 17:42:37.752 [info] > git status -z -uall [10ms]
+2026-05-05 17:43:30.928 [info] [Git][getRemotes] No remotes found in the git config file
+2026-05-05 17:43:30.949 [info] > git config --get commit.template [23ms]
+2026-05-05 17:43:30.953 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [25ms]
+2026-05-05 17:43:30.964 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [8ms]
+2026-05-05 17:43:30.972 [info] > git status -z -uall [18ms]
+2026-05-05 17:43:34.144 [info] > git check-ignore -v -z --stdin [5ms]
+2026-05-05 17:43:35.983 [info] [Git][getRemotes] No remotes found in the git config file
+2026-05-05 17:43:35.995 [info] > git config --get commit.template [15ms]
+2026-05-05 17:43:35.999 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [16ms]
+2026-05-05 17:43:36.019 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [14ms]
+2026-05-05 17:43:36.028 [info] > git status -z -uall [26ms]
+2026-05-05 17:43:36.509 [info] > git check-ignore -v -z --stdin [7ms]
+2026-05-05 17:43:41.041 [info] [Git][getRemotes] No remotes found in the git config file
+2026-05-05 17:43:41.044 [info] > git config --get commit.template [7ms]
+2026-05-05 17:43:41.049 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [9ms]
+2026-05-05 17:43:41.063 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [10ms]
+2026-05-05 17:43:41.071 [info] > git status -z -uall [21ms]
+2026-05-05 17:43:43.922 [info] > git check-ignore -v -z --stdin [9ms]
+2026-05-05 17:44:30.516 [info] [Git][getRemotes] No remotes found in the git config file
+2026-05-05 17:44:30.528 [info] > git config --get commit.template [14ms]
+2026-05-05 17:44:30.529 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [10ms]
+2026-05-05 17:44:30.545 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [10ms]
+2026-05-05 17:44:30.564 [info] > git status -z -uall [32ms]
+2026-05-05 17:44:33.539 [info] > git check-ignore -v -z --stdin [15ms]
+2026-05-05 17:44:33.568 [info] > git ls-files --stage -- .gitignore [17ms]
+2026-05-05 17:44:33.571 [info] > git show --textconv :.gitignore [25ms]
+2026-05-05 17:44:33.586 [info] > git cat-file -s 2326a35cd647e3decdeb2a74813fda76569c2610 [16ms]
+2026-05-05 17:44:34.334 [info] > git blame --root --incremental c8bcd401aab0c824898eac5aba23330462594c19 -- .gitignore [27ms]
+2026-05-05 17:44:35.573 [info] [Git][getRemotes] No remotes found in the git config file
+2026-05-05 17:44:35.579 [info] > git config --get commit.template [8ms]
+2026-05-05 17:44:35.580 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [7ms]
+2026-05-05 17:44:35.588 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [6ms]
+2026-05-05 17:44:35.595 [info] > git status -z -uall [14ms]
+2026-05-05 17:44:35.919 [info] > git check-ignore -v -z --stdin [7ms]
+2026-05-05 17:44:36.263 [info] > git check-ignore -v -z --stdin [14ms]
+2026-05-05 17:44:38.944 [info] > git check-ignore -v -z --stdin [7ms]
+2026-05-05 17:44:40.599 [info] [Git][getRemotes] No remotes found in the git config file
+2026-05-05 17:44:40.612 [info] > git config --get commit.template [13ms]
+2026-05-05 17:44:40.613 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/main refs/remotes/main [9ms]
+2026-05-05 17:44:40.627 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [9ms]
+2026-05-05 17:44:40.712 [info] > git status -z -uall [97ms]
+2026-05-05 17:44:41.086 [info] > git check-ignore -v -z --stdin [10ms]

@@ -86,8 +86,7 @@
                             "items": [
                                 {
                                     "id": "workbench.action.reopenClosedEditor",
-                                    "label": "&&Reopen Closed Editor",
-                                    "enabled": false
+                                    "label": "&&Reopen Closed Editor"
                                 },
                                 {
                                     "id": "vscode.menubar.separator"
@@ -1846,7 +1845,7 @@
             "editorPartMinWidth": 220,
             "titleBarHeight": 35,
             "activityBarWidth": 48,
-            "sideBarWidth": 300,
+            "sideBarWidth": 509,
             "auxiliaryBarWidth": 300,
             "statusBarHeight": 22,
             "windowBorder": false
@@ -1854,7 +1853,7 @@
     },
     "windowSplashWorkspaceOverride": {
         "layoutInfo": {
-            "sideBarWidth": 300,
+            "sideBarWidth": 509,
             "auxiliaryBarWidth": 300,
             "workspaces": {
                 "f51548b6351d63d8479f6161e8560a07": {
