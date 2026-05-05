@@ -1,0 +1,247 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+ROOT="$(pwd)"
+mkdir -p "$ROOT/.gemini/prompts" "$ROOT/bin" "$ROOT/.vscode" "$ROOT/docs" "$ROOT/src"
+
+write_file() {
+  local path="$1"
+  shift
+  if [[ -e "$path" && "${GEMINI_SETUP_FORCE:-0}" != "1" ]]; then
+    echo "skip: $path already exists"
+    return 0
+  fi
+  mkdir -p "$(dirname "$path")"
+  cat > "$path"
+  echo "write: $path"
+}
+
+write_file ".gemini/settings.json" <<'JSON'
+{
+  "$schema": "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/schemas/settings.schema.json",
+  "general": {
+    "preferredEditor": "code",
+    "defaultApprovalMode": "default",
+    "checkpointing": { "enabled": true },
+    "plan": { "enabled": true }
+  },
+  "model": {
+    "name": "${GEMINI_MODEL:-gemini-2.5-flash}",
+    "maxSessionTurns": 50,
+    "compressionThreshold": 0.6,
+    "summarizeToolOutput": {
+      "run_shell_command": { "tokenBudget": 2000 }
+    }
+  },
+  "context": {
+    "fileName": ["GEMINI.md", ".gemini/context.md"],
+    "includeDirectoryTree": true,
+    "includeDirectories": [".gemini/prompts", "docs", "src"],
+    "loadMemoryFromIncludeDirectories": true,
+    "memoryBoundaryMarkers": [".git"],
+    "fileFiltering": {
+      "respectGitIgnore": true,
+      "respectGeminiIgnore": true,
+      "enableRecursiveFileSearch": true,
+      "enableFuzzySearch": true,
+      "customIgnoreFilePaths": [".geminiignore"]
+    }
+  },
+  "privacy": { "usageStatisticsEnabled": false },
+  "advanced": {
+    "excludedEnvVars": ["DEBUG", "DEBUG_MODE", "NODE_ENV"],
+    "ignoreLocalEnv": false
+  }
+}
+JSON
+
+write_file ".gemini/.env.example" <<'EOF_ENV'
+# Copy to .gemini/.env and fill in values you really need.
+# Do NOT commit .gemini/.env.
+
+# GEMINI_API_KEY=your_api_key_here
+GEMINI_MODEL=gemini-2.5-flash
+
+# GOOGLE_GENAI_USE_VERTEXAI=true
+# GOOGLE_CLOUD_PROJECT=your-gcp-project-id
+# GOOGLE_CLOUD_LOCATION=us-central1
+EOF_ENV
+
+write_file "GEMINI.md" <<'EOF_GEMINI'
+# Project Instructions for Gemini CLI
+
+- Be precise and implementation-oriented.
+- Prefer small, reviewable patches.
+- Never commit, stage, or push Git changes unless explicitly asked.
+- Before destructive commands, explain the impact and ask for approval.
+- Inspect files before editing.
+- Report changed files and validation commands.
+EOF_GEMINI
+
+write_file ".gemini/context.md" <<'EOF_CONTEXT'
+# Project Context
+
+This project uses a local `.gemini/` folder for Gemini CLI configuration, prompts, and optional environment variables.
+EOF_CONTEXT
+
+write_file ".gemini/prompts/refactor.md" <<'EOF_REFACTOR'
+# Refactor Prompt
+
+Refactor with minimal behavior change, typed code, tests when useful, and a changed-file report.
+EOF_REFACTOR
+
+write_file ".gemini/prompts/debug.md" <<'EOF_DEBUG'
+# Debug Prompt
+
+Debug by reproducing/inferencing the failure, isolating the smallest cause, fixing minimally, and validating.
+EOF_DEBUG
+
+write_file ".geminiignore" <<'EOF_IGNORE'
+node_modules/
+vendor/
+.venv/
+venv/
+__pycache__/
+*.pyc
+dist/
+build/
+.cache/
+.tmp/
+tmp/
+coverage/
+.pytest_cache/
+.ruff_cache/
+.env
+*.env
+!.gemini/.env.example
+.gemini/.env
+*.zip
+*.tar
+*.tar.gz
+*.mp4
+*.mov
+*.mkv
+*.mp3
+*.wav
+EOF_IGNORE
+
+if [[ ! -f ".gitignore" ]]; then
+  write_file ".gitignore" <<'EOF_GITIGNORE'
+.gemini/.env
+.venv/
+__pycache__/
+*.pyc
+node_modules/
+dist/
+.DS_Store
+EOF_GITIGNORE
+else
+  if ! grep -qxF ".gemini/.env" ".gitignore"; then
+    printf "\n# Gemini CLI local secrets\n.gemini/.env\n" >> ".gitignore"
+    echo "append: .gitignore"
+  fi
+fi
+
+write_file "bin/gemini-start" <<'EOF_START'
+#!/usr/bin/env bash
+set -euo pipefail
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+cd "$ROOT"
+if ! command -v gemini >/dev/null 2>&1; then
+  echo "ERROR: gemini command not found. Install with: npm install -g @google/gemini-cli" >&2
+  exit 1
+fi
+if [[ -f ".gemini/.env" ]]; then
+  set -a
+  source ".gemini/.env"
+  set +a
+fi
+exec gemini "$@"
+EOF_START
+chmod +x "bin/gemini-start"
+
+write_file "bin/gemini-plan" <<'EOF_PLAN'
+#!/usr/bin/env bash
+set -euo pipefail
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+cd "$ROOT"
+exec ./bin/gemini-start --approval-mode=plan "$@"
+EOF_PLAN
+chmod +x "bin/gemini-plan"
+
+write_file "bin/gemini-yolo-sandbox" <<'EOF_YOLO'
+#!/usr/bin/env bash
+set -euo pipefail
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+cd "$ROOT"
+exec ./bin/gemini-start --sandbox --approval-mode=yolo "$@"
+EOF_YOLO
+chmod +x "bin/gemini-yolo-sandbox"
+
+write_file ".vscode/tasks.json" <<'EOF_TASKS'
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Gemini: Start",
+      "type": "shell",
+      "command": "./bin/gemini-start",
+      "problemMatcher": [],
+      "presentation": { "panel": "new", "focus": true }
+    },
+    {
+      "label": "Gemini: Plan Mode",
+      "type": "shell",
+      "command": "./bin/gemini-plan",
+      "problemMatcher": [],
+      "presentation": { "panel": "new", "focus": true }
+    }
+  ]
+}
+EOF_TASKS
+
+write_file "README-gemini.md" <<'EOF_README'
+# Gemini CLI Project Setup
+
+## Install Gemini CLI
+
+```bash
+npm install -g @google/gemini-cli
+# or
+brew install gemini-cli
+```
+
+## Configure secrets
+
+```bash
+cp .gemini/.env.example .gemini/.env
+code .gemini/.env
+```
+
+## Start
+
+```bash
+./bin/gemini-start
+```
+
+## Plan mode
+
+```bash
+./bin/gemini-plan
+```
+
+## Sandbox YOLO mode
+
+```bash
+./bin/gemini-yolo-sandbox
+```
+
+## Regenerate files
+
+```bash
+GEMINI_SETUP_FORCE=1 ./gemini-cli-setup
+```
+EOF_README
+
+chmod +x "$ROOT/gemini-cli-setup"
+echo "done: Gemini CLI project files created in $ROOT"

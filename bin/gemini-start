@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+cd "$ROOT"
+
+if ! command -v gemini >/dev/null 2>&1; then
+  echo "ERROR: gemini command not found. Install it first:" >&2
+  echo "  npm install -g @google/gemini-cli" >&2
+  echo "or:" >&2
+  echo "  brew install gemini-cli" >&2
+  exit 1
+fi
+
+if [[ -f ".gemini/.env" ]]; then
+  set -a
+  # shellcheck disable=SC1091
+  source ".gemini/.env"
+  set +a
+fi
+
+exec gemini "$@"

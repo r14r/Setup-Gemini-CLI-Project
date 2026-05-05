@@ -1,0 +1,66 @@
+{
+  "$schema": "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/schemas/settings.schema.json",
+  "general": {
+    "preferredEditor": "code",
+    "defaultApprovalMode": "default",
+    "checkpointing": {
+      "enabled": true
+    },
+    "plan": {
+      "enabled": true
+    }
+  },
+  "model": {
+    "name": "${GEMINI_MODEL:-gemini-2.5-flash}",
+    "maxSessionTurns": 50,
+    "compressionThreshold": 0.6,
+    "summarizeToolOutput": {
+      "run_shell_command": {
+        "tokenBudget": 2000
+      }
+    }
+  },
+  "context": {
+    "fileName": [
+      "GEMINI.md",
+      ".gemini/context.md"
+    ],
+    "includeDirectoryTree": true,
+    "includeDirectories": [
+      ".gemini/prompts",
+      "docs",
+      "src"
+    ],
+    "loadMemoryFromIncludeDirectories": true,
+    "memoryBoundaryMarkers": [
+      ".git"
+    ],
+    "fileFiltering": {
+      "respectGitIgnore": true,
+      "respectGeminiIgnore": true,
+      "enableRecursiveFileSearch": true,
+      "enableFuzzySearch": true,
+      "customIgnoreFilePaths": [
+        ".geminiignore"
+      ]
+    }
+  },
+  "tools": {
+    "shell": {
+      "pager": "cat",
+      "showColor": true,
+      "backgroundCompletionBehavior": "notify"
+    }
+  },
+  "privacy": {
+    "usageStatisticsEnabled": false
+  },
+  "advanced": {
+    "excludedEnvVars": [
+      "DEBUG",
+      "DEBUG_MODE",
+      "NODE_ENV"
+    ],
+    "ignoreLocalEnv": false
+  }
+}

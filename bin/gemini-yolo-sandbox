@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+cd "$ROOT"
+
+# Uses Gemini CLI sandbox mode. This is still powerful; review .gemini/settings.json and .geminiignore.
+exec ./bin/gemini-start --sandbox --approval-mode=yolo "$@"

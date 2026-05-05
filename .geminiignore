@@ -1,0 +1,33 @@
+# Dependencies
+node_modules/
+vendor/
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# Builds and caches
+dist/
+build/
+.cache/
+.tmp/
+tmp/
+coverage/
+.pytest_cache/
+.ruff_cache/
+
+# Secrets
+.env
+*.env
+!.gemini/.env.example
+.gemini/.env
+
+# Large/generated files
+*.zip
+*.tar
+*.tar.gz
+*.mp4
+*.mov
+*.mkv
+*.mp3
+*.wav

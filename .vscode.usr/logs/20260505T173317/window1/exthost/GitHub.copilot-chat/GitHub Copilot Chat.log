@@ -1,0 +1,51 @@
+2026-05-05 17:34:09.938 [info] [GitExtensionServiceImpl] Initializing Git extension service.
+2026-05-05 17:34:09.938 [info] [GitExtensionServiceImpl] Successfully activated the vscode.git extension.
+2026-05-05 17:34:09.938 [info] [GitExtensionServiceImpl] Enablement state of the vscode.git extension: true.
+2026-05-05 17:34:09.938 [info] [GitExtensionServiceImpl] Successfully registered Git commit message provider.
+2026-05-05 17:34:09.950 [info] Logged in as r14r
+2026-05-05 17:34:09.956 [info] Using the Electron fetcher.
+2026-05-05 17:34:10.031 [info] ConversationFeature: Waiting for copilot token to activate conversation feature
+2026-05-05 17:34:10.867 [info] [CopilotCLI] OpenTelemetry enabled: exporter=file, source=github.copilot
+2026-05-05 17:34:10.905 [info] Got Copilot token for r14r
+2026-05-05 17:34:10.905 [info] Copilot Chat: 0.47.2026050106, VS Code: 1.119.0-insider
+2026-05-05 17:34:10.917 [info] [context keys] Setting context key: github.copilot-chat.activated
+2026-05-05 17:34:10.918 [info] activationBlocker from 'languageModelAccess' took for 936ms
+2026-05-05 17:34:10.920 [info] [CopilotCLIChatSessionContentProvider] listSessions took 858.7768619999988ms
+2026-05-05 17:34:10.950 [info] [CopilotCLI] MCP server started. Lock file: /Users/Ralph.Goestenmeier/.copilot/ide/d84ce831-cdd3-4269-bcb2-871ea76217fc.lock
+2026-05-05 17:34:10.950 [info] [CopilotCLI] Server URI: unix:/var/folders/8d/t93gvp8s7ll9_821yx670bfw0000gv/T/mcp-4L8oN1/mcp.sock#%2Fmcp
+2026-05-05 17:34:11.019 [info] AuthenticationService: firing onDidAuthenticationChange from handleAuthChangeEvent. Has token: true
+2026-05-05 17:34:11.019 [info] copilot token sku: free_limited_copilot
+2026-05-05 17:34:11.019 [info] ConversationFeature: Activating contributions
+2026-05-05 17:34:11.019 [info] GitHub.vscode-pull-request-github extension is not yet activated.
+2026-05-05 17:34:11.037 [info] Registering default platform agent...
+2026-05-05 17:34:11.037 [info] ConversationFeature: onDidAuthenticationChange has token: true
+2026-05-05 17:34:11.037 [info] [code-referencing] Public code references are enabled.
+2026-05-05 17:34:11.039 [info] activationBlocker from 'conversationFeature' took for 1068ms
+2026-05-05 17:34:11.071 [info] BYOK: Copilot Chat known models list fetched successfully.
+2026-05-05 17:34:11.084 [info] [CopilotCLIChatSessionContentProvider] listSessions took 7.499746000001323ms
+2026-05-05 17:34:11.087 [info] [CopilotCLIChatSessionContentProvider] listSessions took 1.1717619999981252ms
+2026-05-05 17:34:11.110 [info] GithubAvailableEmbeddingTypesManager: Got embeddings. Primary: metis-1024-I16-Binary. Deprecated: 
+2026-05-05 17:34:11.113 [info] WorkspaceChunkSearchService: using embedding type metis-1024-I16-Binary
+2026-05-05 17:34:11.115 [error] Failed to create database. Falling back to in-memory db: Error: unable to open database file
+2026-05-05 17:34:11.421 [info] Fetched model metadata in 1419ms 44ea464b-772a-4382-bdd2-5d65f1c42ac7
+2026-05-05 17:34:11.527 [info] Latest entry: ccreq:latest.copilotmd
+2026-05-05 17:34:11.528 [info] ccreq:2471253c.copilotmd | markdown
+2026-05-05 17:34:27.346 [info] [CopilotCLIChatSessionContentProvider] listSessions took 9.111630000006699ms
+2026-05-05 17:34:41.541 [info] [CopilotCLIChatSessionContentProvider] listSessions took 5.58851999999024ms
+2026-05-05 17:35:29.249 [info] [CopilotCLIChatSessionContentProvider] listSessions took 4.650603000001865ms
+2026-05-05 17:39:57.669 [info] [CopilotCLIChatSessionContentProvider] listSessions took 4.366276999993715ms
+2026-05-05 17:40:46.616 [info] [CopilotCLIChatSessionContentProvider] listSessions took 3.2003939999849536ms
+2026-05-05 17:41:02.268 [info] [CopilotCLIChatSessionContentProvider] listSessions took 4.8218590000178665ms
+2026-05-05 17:41:09.756 [info] [CopilotCLIChatSessionContentProvider] listSessions took 7.365105000033509ms
+2026-05-05 17:41:12.429 [info] ccreq:e2365591.copilotmd | markdown
+2026-05-05 17:41:12.440 [warning] [relatedFiles] unknown language shellscript
+2026-05-05 17:41:12.496 [info] ccreq:e65364a9.copilotmd | markdown
+2026-05-05 17:41:12.754 [info] [fetchCompletions] Request 838ce419-5e82-4f52-88e6-d2a66128bb21 at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 287.2864399999962ms
+2026-05-05 17:41:12.827 [info] ccreq:a6e32a78.copilotmd | markdown
+2026-05-05 17:41:14.808 [info] message 0 returned. finish reason: [stop]
+2026-05-05 17:41:14.809 [info] request done: requestId: [80364bb7-9e74-473d-9055-b842045782e7] model deployment ID: []
+2026-05-05 17:41:15.183 [info] ccreq:702fdb2c.copilotmd | success | nes-callisto-003 | 596ms | [XtabProvider]
+2026-05-05 17:41:15.438 [info] message 0 returned. finish reason: [stop]
+2026-05-05 17:41:15.439 [info] request done: requestId: [2cb5b93a-2fd8-404e-8fa5-efce9d4fa2c4] model deployment ID: []
+2026-05-05 17:41:15.584 [info] ccreq:3805984b.copilotmd | success | copilot-suggestions-himalia-001 | 394ms | [nes.nextCursorPosition]
+2026-05-05 17:41:21.558 [info] [CopilotCLIChatSessionContentProvider] listSessions took 3.4713310000370257ms
