@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+PROJECT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+VSCODE_APP="/Users/Shared/VSCode/Default/Visual Studio Code - Insiders.app"
+VSCODE_EXE="${VSCODE_APP}/Contents/MacOS/Electron"
+
+USER_DATA_DIR="${PROJECT_DIR}/.vscode.usr"
+EXT_DIR="${PROJECT_DIR}/.vscode.ext"
+PROFILE_NAME="$(basename "${PROJECT_DIR}")"
+
+mkdir -p "${USER_DATA_DIR}"
+mkdir -p "${EXT_DIR}"
+
+WORKSPACE_FILE="$(find "${PROJECT_DIR}" -maxdepth 1 -name "*.code-workspace" | head -n 1 || true)"
+
+echo "🚀 Starting VSCode Insiders"
+echo "📁 Project: ${PROJECT_DIR}"
+echo "🔐 Password store: basic"
+
+set -x
+
+if [ -n "${WORKSPACE_FILE}" ]; then
+  exec "${VSCODE_EXE}" \
+    --password-store=basic \
+    --new-window \
+    --user-data-dir="${USER_DATA_DIR}" \
+    --extensions-dir="${EXT_DIR}" \
+    --profile="${PROFILE_NAME}" \
+    "${WORKSPACE_FILE}"
+else
+  exec "${VSCODE_EXE}" \
+    --password-store=basic \
+    --new-window \
+    --user-data-dir="${USER_DATA_DIR}" \
+    --extensions-dir="${EXT_DIR}" \
+    --profile="${PROFILE_NAME}" \
+    "${PROJECT_DIR}"
+fi

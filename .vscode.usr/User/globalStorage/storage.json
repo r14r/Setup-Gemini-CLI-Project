@@ -3,28 +3,28 @@
     "telemetry.machineId": "75609ffd2186defa1d63f2a207f4a9708ab693b69bd9ced98a212157ebec6d4b",
     "telemetry.devDeviceId": "77cf6f35-9e76-4223-93a1-02c0ae6b393f",
     "backupWorkspaces": {
-        "workspaces": [],
-        "folders": [
+        "workspaces": [
             {
-                "folderUri": "file:///Users/Shared/CLOUD/Programmier-Workshops/Kurse/Gemini/Einsteiger/Setup-Gemini-CLI-Project"
+                "id": "8eb8e410a86d9c38b2a2a616bf3633d8",
+                "configURIPath": "file:///Users/Shared/CLOUD/Programmier-Workshops/Kurse/Gemini/Einsteiger/Setup-Gemini-CLI-Project/Workspace.code-workspace"
             }
         ],
+        "folders": [],
         "emptyWindows": []
     },
     "windowControlHeight": 35,
     "profileAssociations": {
         "workspaces": {
-            "file:///Users/Shared/CLOUD/Programmier-Workshops/Kurse/Gemini/Einsteiger/Setup-Gemini-CLI-Project": "-fecb49a"
+            "file:///Users/Shared/CLOUD/Programmier-Workshops/Kurse/Gemini/Einsteiger/Setup-Gemini-CLI-Project/Workspace.code-workspace": "1494c29d"
         },
         "emptyWindows": {}
     },
     "userDataProfiles": [
         {
-            "location": "-fecb49a",
+            "location": "1494c29d",
             "name": "Setup-Gemini-CLI-Project"
         }
     ],
-    "launchServices.registeredEmbeddedApp": "1.119.0-insider",
     "lastKnownMenubarData": {
         "menus": {
             "File": {
@@ -86,10 +86,31 @@
                             "items": [
                                 {
                                     "id": "workbench.action.reopenClosedEditor",
-                                    "label": "&&Reopen Closed Editor"
+                                    "label": "&&Reopen Closed Editor",
+                                    "enabled": false
                                 },
                                 {
                                     "id": "vscode.menubar.separator"
+                                },
+                                {
+                                    "id": "openRecentWorkspace",
+                                    "uri": {
+                                        "$mid": 1,
+                                        "path": "/Users/Shared/CLOUD/Programmier-Workshops/Kurse/Gemini/Einsteiger/Setup-Gemini-CLI-Project/Workspace.code-workspace",
+                                        "scheme": "file"
+                                    },
+                                    "enabled": true,
+                                    "label": "/Users/Shared/CLOUD/Programmier-Workshops/Kurse/Gemini/Einsteiger/Setup-Gemini-CLI-Project/Workspace (Workspace)"
+                                },
+                                {
+                                    "id": "openRecentFolder",
+                                    "uri": {
+                                        "$mid": 1,
+                                        "path": "/Users/Shared/CLOUD/Programmier-Workshops/Kurse/Gemini/Einsteiger",
+                                        "scheme": "file"
+                                    },
+                                    "enabled": true,
+                                    "label": "/Users/Shared/CLOUD/Programmier-Workshops/Kurse/Gemini/Einsteiger"
                                 },
                                 {
                                     "id": "openRecentFolder",
@@ -170,26 +191,6 @@
                                     },
                                     "enabled": true,
                                     "label": "/Users/Shared/VSCode/Environments/Linedance_99-Web/.vscode.usr/logs/20260427T215731"
-                                },
-                                {
-                                    "id": "openRecentWorkspace",
-                                    "uri": {
-                                        "$mid": 1,
-                                        "path": "/Users/Shared/CLOUD/Projekte/Linedance/00-Website-v2-Frontend/Workspace.code-workspace",
-                                        "scheme": "file"
-                                    },
-                                    "enabled": true,
-                                    "label": "/Users/Shared/CLOUD/Projekte/Linedance/00-Website-v2-Frontend/Workspace (Workspace)"
-                                },
-                                {
-                                    "id": "openRecentFolder",
-                                    "uri": {
-                                        "$mid": 1,
-                                        "path": "/Users/Shared/CLOUD/Projekte/Linedance/00-Website-v2-Frontend",
-                                        "scheme": "file"
-                                    },
-                                    "enabled": true,
-                                    "label": "/Users/Shared/CLOUD/Projekte/Linedance/00-Website-v2-Frontend"
                                 },
                                 {
                                     "id": "vscode.menubar.separator"
@@ -274,7 +275,7 @@
                     },
                     {
                         "id": "workbench.action.closeFolder",
-                        "label": "Close &&Folder"
+                        "label": "Close &&Workspace"
                     },
                     {
                         "id": "workbench.action.closeWindow",
@@ -463,8 +464,7 @@
                                 },
                                 {
                                     "id": "workbench.action.toggleAuxiliaryBar",
-                                    "label": "&&Secondary Side Bar",
-                                    "checked": true
+                                    "label": "&&Secondary Side Bar"
                                 },
                                 {
                                     "id": "workbench.action.toggleStatusbarVisibility",
@@ -604,7 +604,8 @@
                                 },
                                 {
                                     "id": "editor.action.toggleMinimap",
-                                    "label": "&&Minimap"
+                                    "label": "&&Minimap",
+                                    "checked": true
                                 },
                                 {
                                     "id": "breadcrumbs.toggle",
@@ -688,13 +689,6 @@
                                 {
                                     "id": "workbench.action.splitEditorRight",
                                     "label": "Split &&Right"
-                                },
-                                {
-                                    "id": "vscode.menubar.separator"
-                                },
-                                {
-                                    "id": "workbench.action.splitEditorInGroup",
-                                    "label": "Split in &&Group"
                                 },
                                 {
                                     "id": "vscode.menubar.separator"
@@ -810,7 +804,8 @@
                     },
                     {
                         "id": "editor.action.toggleWordWrap",
-                        "label": "&&Word Wrap"
+                        "label": "&&Word Wrap",
+                        "enabled": false
                     }
                 ]
             },
@@ -818,7 +813,8 @@
                 "items": [
                     {
                         "id": "workbench.action.navigateBack",
-                        "label": "&&Back"
+                        "label": "&&Back",
+                        "enabled": false
                     },
                     {
                         "id": "workbench.action.navigateForward",
@@ -827,7 +823,8 @@
                     },
                     {
                         "id": "workbench.action.navigateToLastEditLocation",
-                        "label": "&&Last Edit Location"
+                        "label": "&&Last Edit Location",
+                        "enabled": false
                     },
                     {
                         "id": "vscode.menubar.separator"
@@ -1046,8 +1043,7 @@
                     },
                     {
                         "id": "workbench.action.debug.configure",
-                        "label": "Open &&Configurations",
-                        "enabled": false
+                        "label": "Open &&Configurations"
                     },
                     {
                         "id": "debug.addConfiguration",
@@ -1305,7 +1301,7 @@
                                     "label": "Default"
                                 },
                                 {
-                                    "id": "workbench.profiles.actions.profileEntry.-fecb49a",
+                                    "id": "workbench.profiles.actions.profileEntry.1494c29d",
                                     "label": "Setup-Gemini-CLI-Project",
                                     "checked": true
                                 },
@@ -1569,11 +1565,6 @@
                 "isNative": false,
                 "userSettingsLabel": "cmd+k ctrl+shift+alt+cmd+7"
             },
-            "workbench.action.splitEditorInGroup": {
-                "label": "⌘K ⌃⌥⌘7",
-                "isNative": false,
-                "userSettingsLabel": "cmd+k ctrl+alt+cmd+7"
-            },
             "workbench.action.copyEditorToNewWindow": {
                 "label": "⌘K O",
                 "isNative": false,
@@ -1821,6 +1812,7 @@
             }
         }
     },
+    "launchServices.registeredEmbeddedApp": "1.119.0-insider",
     "theme": "vs-dark",
     "themeBackground": "#121314",
     "windowSplash": {
@@ -1845,34 +1837,37 @@
             "editorPartMinWidth": 220,
             "titleBarHeight": 35,
             "activityBarWidth": 48,
-            "sideBarWidth": 509,
-            "auxiliaryBarWidth": 300,
+            "sideBarWidth": 300,
+            "auxiliaryBarWidth": 0,
             "statusBarHeight": 22,
             "windowBorder": false
         }
     },
     "windowSplashWorkspaceOverride": {
         "layoutInfo": {
-            "sideBarWidth": 509,
+            "sideBarWidth": 300,
             "auxiliaryBarWidth": 300,
             "workspaces": {
-                "f51548b6351d63d8479f6161e8560a07": {
+                "8eb8e410a86d9c38b2a2a616bf3633d8": {
                     "sideBarVisible": true,
-                    "auxiliaryBarVisible": true
+                    "auxiliaryBarVisible": false
                 }
             }
         }
     },
     "windowsState": {
         "lastActiveWindow": {
-            "folder": "file:///Users/Shared/CLOUD/Programmier-Workshops/Kurse/Gemini/Einsteiger/Setup-Gemini-CLI-Project",
-            "backupPath": "/Users/Shared/CLOUD/Programmier-Workshops/Kurse/Gemini/Einsteiger/Setup-Gemini-CLI-Project/.vscode.usr/Backups/66fd709827dc50f3079b2d7bb54b4fc2",
+            "workspaceIdentifier": {
+                "id": "8eb8e410a86d9c38b2a2a616bf3633d8",
+                "configURIPath": "file:///Users/Shared/CLOUD/Programmier-Workshops/Kurse/Gemini/Einsteiger/Setup-Gemini-CLI-Project/Workspace.code-workspace"
+            },
+            "backupPath": "/Users/Shared/CLOUD/Programmier-Workshops/Kurse/Gemini/Einsteiger/Setup-Gemini-CLI-Project/.vscode.usr/Backups/8eb8e410a86d9c38b2a2a616bf3633d8",
             "uiState": {
                 "mode": 1,
-                "x": 55,
-                "y": 119,
-                "width": 1440,
-                "height": 900
+                "x": 0,
+                "y": 71,
+                "width": 1182,
+                "height": 882
             }
         },
         "openedWindows": []
